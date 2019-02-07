@@ -1,0 +1,123 @@
+#Q1
+
+Tuple_Obj = (1,2,3,4,5)
+print(Tuple_Obj[3])
+
+#Q2
+
+Set1 = set(['A', 'B', 'C', 'D'])
+Set2 = set(['A', 'C', 'E', 'G'])
+print(Set1.intersection(Set2))
+print(Set1.union(Set2))
+print(Set1.difference(Set2))
+print(Set1.symmetric_difference(Set2))
+
+#Q3
+
+Dic1 = {'Quiz':100, 'Assignment':95, 'Midterm':98, 'Final':96, 'Presentation':94}
+Max_Value = max(*Dic1.values())
+print(Max_Value)
+for Key in Dic1:
+    if Dic1[Key] == Max_Value:
+        print("Key = {}".format(Key))
+    else:
+        continue
+
+#Q4
+
+import string
+import random
+s_base = string.ascii_letters
+random.seed(582)
+s=""
+for i in range(50):
+    s += s_base[random.randint(0,25)]
+
+print(str(len(s)) + " letters generated as: " + s)
+Sorted_S = sorted(list(s))
+
+Dic3 = {}
+for i in Sorted_S:
+    if i in Dic3.keys():
+        Dic3[i] += 1
+    else:
+        Dic3[i]=1
+print(Dic3)
+
+#Q5
+
+s2 = ""
+random.seed(204)
+for i in range(100):
+    s2 += s_base[random.randint(0, 25)]
+print(str(len(s2)) + "letters generated as: " + s2)
+
+#Q6
+
+Sorted_s2 = sorted(list(s2))
+Dic4 = {}
+for i in Sorted_s2:
+    if i in Dic4.keys():
+        Dic4[i] += 1
+    else:
+        Dic4[i] = 1
+print(Dic4)
+
+#Q7
+
+Set_Dic3 = set(Dic3)
+Set_Dic4 = set(Dic4)
+print(Set_Dic3.symmetric_difference(Set_Dic4))
+
+#Q8
+
+def compare(x,y):
+    if x > y:
+        return 1
+    elif x == y:
+        return 0
+    else:
+        return -1
+print(compare(x,y))
+
+#Q9
+
+Name_Movie = input("Movie Title: ")
+print("My favorite movie is '{}'".format(Name_Movie))
+
+#Q10
+
+max_iteration = 100
+fizz_divider = 3
+buzz_divider = 5
+i4 = 0
+while i4 < max_iteration:
+    i4 += 1
+    if i4 % fizz_divider == 0:
+        if i4 % buzz_divider == 0:
+            print('fizz buzz')
+            continue
+        print('fizz')
+    elif i4 % buzz_divider == 0:
+        print('buzz')
+    else:
+        print(i4)
+
+#Q11
+
+city_loglat = [[32.715736, -117.161087],
+          [34.052235, -118.243683],
+          [40.712776, -74.005974]]
+
+#Q7
+city_UTM = [[3619785.60, 484903.85],
+          [376845.35, 385215.53],
+          [583961.60, 4507348.36]]
+dist_sd_ny = ((city_UTM[0][0] - city_UTM[2][0]) ** 2 + (city_UTM[0][1] - city_UTM[2][1]) ** 2) ** 0.5
+print(dist_sd_ny/1000)
+
+#Q11. Write a function to calculate the distance two points. The function takes two arguments. Call the function twice with different input parameters and print the distance values.
+#Q12. In the following function, describe what kind of arguments are acceptable. Use comments to answer this.
+#def echo(*args, **kwargs) : / print(args, kwargs)
+#Q13. Call the function in Q12 three times using different input argument types.
+#Q14. Write a function, addif(), which takes in one numerical threshold value and an arbitrary number of numerical arguments. The function should return the sum of the numerical arguments if their values are greater than the threshold value. Call the function twice.
